@@ -1,0 +1,12 @@
+#
+# Copy this file to the root of the repo when running onceover spec tests.
+# The automatic testing script run as part of the role imt_jenkins_agent_server
+# will do this automatically, set up the site link and rename to environment.conf.
+#
+# See also https://puppet.com/docs/puppet/6.2/config_file_environment.html
+#
+modulepath          = site:modules:$basemodulepath
+# default
+#modulepath          = modules:$basemodulepath
+# set a custom configuration version for environment compilation and application
+config_version      = 'scripts/config_version.sh $environmentpath $environment'

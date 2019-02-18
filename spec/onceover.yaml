@@ -1,0 +1,33 @@
+opts:
+  :facts_dirs:        # Remember: `opts` keys are symbols!
+    - 'spec/factsets' # Limit factsets to files in this repository
+  :debug: true        # set the `logger.level` to debug
+
+# Classes to be tested
+classes:
+  - role::imt_windows_fileserver
+
+# Nodes to tests classes on, this refers to a 'factset' or 'nodeset'
+# depending on whether you are running 'spec' or 'acceptance' tests
+nodes:
+  - Windows_Server-2016-64-vmware
+  - Windows_Server-2012-64-vmware
+
+# You can group classes here to save typing
+class_groups:
+  windows_server:
+    - role::imt_windows_fileserver
+
+# You can group nodes here to save typing
+# We have created a 'non_windows_nodes' group because we can't
+# give you Windows vagrant boxes to test with because licensing,
+# we can give you fact sets though so go crazy with spec testing!
+node_groups:
+  windows_nodes:
+    - Windows_Server-2012-64-vmware
+    - Windows_Server-2016-64-vmware
+
+test_matrix:
+  - windows_nodes:
+      classes: 'windows_server'
+      tests: 'all_tests'

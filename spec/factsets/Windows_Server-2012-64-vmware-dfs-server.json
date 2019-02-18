@@ -1,0 +1,189 @@
+{
+  "name": "dfs-cbr.dev.csiro.au",
+  "values": {
+    "puppet_group": "imt_windows_dfs_server",
+    "ad_domain": "dev.csiro.au",
+    "agent_specified_environment": "production",
+    "aio_agent_version": "5.3.3",
+    "architecture": "x64",
+    "dhcp_servers": {
+      "Ethernet0": "152.83.3.221",
+      "system": "152.83.3.221"
+    },
+    "dmi": {
+      "manufacturer": "Phoenix Technologies LTD",
+      "product": {
+        "name": "VMware Virtual Platform",
+        "serial_number": "VMware-42 38 54 6c a6 98 99 7a-bf 45 04 69 07 d0 6b 8e"
+      }
+    },
+    "domain": "dev.csiro.au",
+    "env_windows_installdir": "C:\\Program Files\\Puppet Labs\\Puppet",
+    "facterversion": "3.9.3",
+    "fqdn": "dfs-cbr.dev.csiro.au",
+    "hardwareisa": "x64",
+    "hardwaremodel": "x86_64",
+    "hostname": "dfs-cbr",
+    "hypervisors": {
+      "vmware": {
+      }
+    },
+    "id": "NEXUS\\na-han329",
+    "identity": {
+      "privileged": true,
+      "user": "NEXUS\\na-han329"
+    },
+    "ims_uniqueid": "175584",
+    "interfaces": "Ethernet0",
+    "ipaddress": "152.83.105.253",
+    "ipaddress6": "2405:b000:601:17::105:253",
+    "ipaddress6_Ethernet0": "2405:b000:601:17::105:253",
+    "ipaddress_Ethernet0": "152.83.105.253",
+    "is_pe": false,
+    "is_virtual": true,
+    "kernel": "windows",
+    "kernelmajversion": "10.0",
+    "kernelrelease": "10.0.14393",
+    "kernelversion": "10.0.14393",
+    "macaddress": "00:50:56:B8:D5:1B",
+    "macaddress_Ethernet0": "00:50:56:B8:D5:1B",
+    "manufacturer": "Phoenix Technologies LTD",
+    "memory": {
+      "system": {
+        "available": "3.13 GiB",
+        "available_bytes": 3363688448,
+        "capacity": "60.84%",
+        "total": "8.00 GiB",
+        "total_bytes": 8589328384,
+        "used": "4.87 GiB",
+        "used_bytes": 5225639936
+      }
+    },
+    "memoryfree": "3.13 GiB",
+    "memoryfree_mb": 3207.86328125,
+    "memorysize": "8.00 GiB",
+    "memorysize_mb": 8191.421875,
+    "mtu_Ethernet0": 1500,
+    "netmask": "255.255.248.0",
+    "netmask6": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+    "netmask6_Ethernet0": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+    "netmask_Ethernet0": "255.255.248.0",
+    "network": "152.83.104.0",
+    "network6": "2405:b000:601:17::105:253",
+    "network6_Ethernet0": "2405:b000:601:17::105:253",
+    "network_Ethernet0": "152.83.104.0",
+    "networking": {
+      "dhcp": "152.83.3.221",
+      "domain": "dev.csiro.au",
+      "fqdn": "dfs-cbr.dev.csiro.au",
+      "hostname": "dfs-cbr",
+      "interfaces": {
+        "Ethernet0": {
+          "bindings": [
+            {
+              "address": "152.83.105.253",
+              "netmask": "255.255.248.0",
+              "network": "152.83.104.0"
+            }
+          ],
+          "bindings6": [
+            {
+              "address": "2405:b000:601:17::105:253",
+              "netmask": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+              "network": "2405:b000:601:17::105:253"
+            },
+            {
+              "address": "fe80::610a:75e:235e:b214%3",
+              "netmask": "ffff:ffff:ffff:ffff::",
+              "network": "fe80::%3"
+            }
+          ],
+          "dhcp": "152.83.3.221",
+          "ip": "152.83.105.253",
+          "ip6": "2405:b000:601:17::105:253",
+          "mac": "00:50:56:B8:D5:1B",
+          "mtu": 1500,
+          "netmask": "255.255.248.0",
+          "netmask6": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+          "network": "152.83.104.0",
+          "network6": "2405:b000:601:17::105:253"
+        }
+      },
+      "ip": "152.83.105.253",
+      "ip6": "2405:b000:601:17::105:253",
+      "mac": "00:50:56:B8:D5:1B",
+      "mtu": 1500,
+      "netmask": "255.255.248.0",
+      "netmask6": "ffff:ffff:ffff:ffff:ffff:ffff:ffff:ffff",
+      "network": "152.83.104.0",
+      "network6": "2405:b000:601:17::105:253",
+      "primary": "Ethernet0"
+    },
+    "operatingsystem": "windows",
+    "operatingsystemmajrelease": "2012 R2",
+    "operatingsystemrelease": "2012 R2",
+    "os": {
+      "architecture": "x64",
+      "family": "windows",
+      "hardware": "x86_64",
+      "name": "windows",
+      "release": {
+        "full": "2012 R2",
+        "major": "2012 R2"
+      },
+      "windows": {
+        "system32": "C:\\Windows\\system32"
+      }
+    },
+    "osfamily": "windows",
+    "package_provider": "windows",
+    "path": "C:\\Program Files\\Puppet Labs\\Puppet\\facter/bin;C:\\Program Files\\Puppet Labs\\Puppet\\facter/../puppet/bin;C:\\Program Files\\Puppet Labs\\Puppet\\puppet\\bin;C:\\Program Files\\Puppet Labs\\Puppet\\facter\\bin;C:\\Program Files\\Puppet Labs\\Puppet\\hiera\\bin;C:\\Program Files\\Puppet Labs\\Puppet\\mcollective\\bin;C:\\Program Files\\Puppet Labs\\Puppet\\bin;C:\\Program Files\\Puppet Labs\\Puppet\\sys\\ruby\\bin;C:\\Program Files\\Puppet Labs\\Puppet\\sys\\tools\\bin;C:\\Windows\\system32;C:\\Windows;C:\\Windows\\System32\\Wbem;C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\;C:\\Program Files\\Puppet Labs\\Puppet\\bin;C:\\Users\\na-han329\\AppData\\Local\\Microsoft\\WindowsApps",
+    "physicalprocessorcount": 2,
+    "powershell_version": "5.1.14393.0",
+    "processor0": "Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz",
+    "processor1": "Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz",
+    "processorcount": 2,
+    "processors": {
+      "count": 2,
+      "isa": "x64",
+      "models": [
+        "Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz",
+        "Intel(R) Xeon(R) CPU E5-2697 v2 @ 2.70GHz"
+      ],
+      "physicalcount": 2
+    },
+    "productname": "VMware Virtual Platform",
+    "puppet_environmentpath": "C:/ProgramData/PuppetLabs/code/environments",
+    "puppet_server": "puppetmaster-tng.it.csiro.au",
+    "puppet_vardir": "C:/ProgramData/PuppetLabs/puppet/cache",
+    "puppetversion": "5.3.3",
+    "ruby": {
+      "platform": "x64-mingw32",
+      "sitedir": "C:/Program Files/Puppet Labs/Puppet/sys/ruby/lib/ruby/site_ruby/2.4.0",
+      "version": "2.4.2"
+    },
+    "rubyplatform": "x64-mingw32",
+    "rubysitedir": "C:/Program Files/Puppet Labs/Puppet/sys/ruby/lib/ruby/site_ruby/2.4.0",
+    "rubyversion": "2.4.2",
+    "serialnumber": "VMware-42 38 54 6c a6 98 99 7a-bf 45 04 69 07 d0 6b 8e",
+    "service_provider": "windows",
+    "system32": "C:\\Windows\\system32",
+    "system_uptime": {
+      "days": 10,
+      "hours": 258,
+      "seconds": 930652,
+      "uptime": "10 days"
+    },
+    "timezone": "AUS Eastern Daylight Time",
+    "uptime": "10 days",
+    "uptime_days": 10,
+    "uptime_hours": 258,
+    "uptime_seconds": 930652,
+    "virtual": "vmware",
+    "clientcert": "dfs-cbr.dev.csiro.au",
+    "clientversion": "5.3.3",
+    "clientnoop": false
+  },
+  "timestamp": "2019-01-30T16:04:44.165844000+11:00",
+  "expiration": "2019-01-30T16:34:44.165844000+11:00"
+}

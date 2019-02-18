@@ -1,0 +1,38 @@
+#
+# We keep a copy of the hiera.yaml file in place for rspec testing.
+# Otherwise we will get failures when eyaml is loaded and no keys are present.
+# See https://github.com/dylanratcliffe/onceover#hiera-data
+#
+version: 5
+defaults:
+  datadir: ../hieradata
+  data_hash: yaml_data
+
+hierarchy:
+  - name: "CSIRO yaml hierarchy"
+    paths:
+      - "hosts/%{::trusted.certname}.yaml"
+      - "nodes/%{::trusted.certname}.yaml"
+      - "puppet_groups/%{::facts.puppet_group}/%{::facts.ad_domain}.yaml"
+      - "puppet_groups/%{::facts.puppet_group}.yaml"
+      - "domain/%{::facts.ad_domain}.yaml"
+      - "net_region/%{::facts.imt_network_region}.yaml"
+      - "dists/%{::facts.os.name}_%{::facts.os.release.major}_%{::facts.os.release.minor}_%{::facts.os.architecture}.yaml"
+      - "dists/%{::facts.os.name}_%{::facts.os.release.major}_%{::facts.os.release.minor}.yaml"
+      - "dists/%{::facts.os.name}_%{::facts.os.release.major}_%{::facts.os.architecture}.yaml"
+      - "dists/%{::facts.os.name}_%{::facts.os.release.major}.yaml"
+      - "dists/%{::facts.os.name}_%{::facts.os.architecture}.yaml"
+      - "dists/%{::facts.os.name}.yaml"
+      - "roles/%{::trusted.extensions.pp_role}.yaml"
+      - "common.yaml"
+
+#
+# Layers of hiera.
+#
+# hosts is external data, accessed via a sym-link from Puppet OS servers only (IMS).
+# nodes is local repo data with node overrides.
+# puppet_groups contains roles based on IMS.
+# net_region supplies defaults based on location.
+# dists contains architecture-specific settings.
+# common is general settings applicable to everyone.
+#

@@ -1,0 +1,65 @@
+#
+# See:
+#    https://puppet.com/blog/unit-testing-rspec-puppet-for-beginners
+#    https://www.example42.com/2017/07/24/spec-testing-control-repo/
+#    http://rspec.info/documentation/
+#    http://rspec.info/documentation/3.7/rspec-expectations/
+#    https://relishapp.com/rspec/rspec-expectations/docs/compound-expectations
+#
+# To get this set up, run the following:
+#    bundle install --gemfile ./Gemfile --path vendor/bundle
+#
+require 'puppetlabs_spec_helper/rake_tasks'
+require 'puppet-lint/tasks/puppet-lint'
+require 'puppet-syntax/tasks/puppet-syntax'
+require 'metadata-json-lint/rake_task'
+require 'onceover/rake_tasks'
+
+# Options passed to rake lint command
+# See http://puppet-lint.com/checks/
+PuppetLint.configuration.ignore_paths = ["spec/**/*.pp", "pkg/**/*.pp"]
+PuppetLint.configuration.send('disable_autoloader_layout')
+# We just don't care about this stuff
+PuppetLint.configuration.send('disable_80chars')
+PuppetLint.configuration.send('disable_140chars')
+# We want all of these checked
+#PuppetLint.configuration.send('disable_double_quoted_strings')
+#PuppetLint.configuration.send('disable_slash_comments')
+#PuppetLint.configuration.send('disable_star_comments')
+#PuppetLint.configuration.send('disable_variables_not_enclosed')
+#PuppetLint.configuration.send('disable_arrow_alignment')
+#PuppetLint.configuration.send('disable_trailing_whitespace')
+# At the moment this is broken, identifying local variables
+# in iterations as top level. Can surround the code block
+# with the following comments:
+# lint:ignore:variable_scope
+# lint:endignore
+PuppetLint.configuration.send('disable_variable_scope')
+
+# Within validate we check manifest syntax and for some style
+# guide issues such as header comments before class definitons.
+# See http://stackoverflow.com/questions/9796028/execute-bash-commands-from-a-rakefile
+# for some useful rakefile syntax.
+#
+desc "Validate manifests, templates, and ruby files"
+task :validate do
+  puts "WARNING: Rake tasks for testing have been deprecated, please use `onceover run spec` instead"
+  Dir['modules/profile**/*.pp', 'site/**/*.pp'].each do |manifest|
+    sh "puppet parser validate --noop #{manifest}"
+    sh "head -1 #{manifest} | grep -q '^#'", {verbose: false}
+  end
+  Dir['spec/**/*.rb','site/**/*.rb'].each do |ruby_file|
+    sh "ruby -c #{ruby_file}" unless ruby_file =~ /spec\/fixtures/
+  end
+  Dir['site/**/*.erb'].each do |template|
+    sh "erb -P -x -T '-' #{template} | ruby -c"
+  end
+end
+
+desc "Run syntax, lint, and spec tests."
+task :test => [
+  :metadata_lint,
+  :syntax,
+  :lint,
+  :spec,
+]
